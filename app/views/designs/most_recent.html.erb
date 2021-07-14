@@ -1,0 +1,8 @@
+<ul>
+
+<% @designs.each do |des| %>
+
+<li><%= link_to(des.title, design_path(des)) %> <%= des.uploaded_at %></li>
+
+<% end %>
+</ul>

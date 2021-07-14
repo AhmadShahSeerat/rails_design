@@ -1,0 +1,23 @@
+
+<%# <img src=" <%= @design.design_url %> 
+
+<%# these two are the same  %>
+
+<%= image_tag(@design.design_url) %>
+
+<h1> <%= @design.title %> </h1>
+
+<div>
+
+<p> <%= @design.uploaded_at %> </p>
+<p> <%= @design.description %> </p>
+<p> <%= @design.views %> </p>
+<p> <%= @design.likes %> </p>
+<p> <%= @design.dislikes %> </p>
+
+</div>
+
+
+
+<%= link_to 'Back', designs_path %>
+
