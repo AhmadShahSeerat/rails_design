@@ -8,3 +8,6 @@ class ApplicationController < ActionController::Base
     end
 
 end
+
+
+checking if its in ap controller in min 
