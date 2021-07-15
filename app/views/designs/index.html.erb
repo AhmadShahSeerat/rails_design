@@ -1,10 +1,15 @@
-<ul><
+
+<h1> All Designs </h1>
+
+<ul>
 
 <% @designs.each do |des| %>
 
-<li> <%= link_to des.title, design_path(des) %> </li>
+<li> <%= link_to des.title, design_path(des) %> uploaded at
+<%= des.uploaded_at %>
+ </li>
 
 <%# <%= des.design_url %> 
 
 <% end %>
-/ul>
+</ul>

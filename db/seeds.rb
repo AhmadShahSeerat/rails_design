@@ -17,7 +17,7 @@ designs.times do
     puts "-----------------"
     count += 1
     puts "#{count/designs.to_f*100}%"
-    Design.create(created_at: DateTime.yesterday, design_url: "https://loremflickr.com/320/240?random=#{(0...999).to_a.sample}", title: Faker::Movie.title, description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 4))
+    Design.create(created_at: (0..3).to_a.sample.days.ago, design_url: "https://loremflickr.com/320/240?random=#{(0...999).to_a.sample}", title: Faker::Movie.title, description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 4))
 end
 puts "-----------------"
 puts "Design Data: 100%"
