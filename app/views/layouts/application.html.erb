@@ -30,15 +30,19 @@
           <%# this takes us to designs once we click on home in the above line %>
         </li>
 
-<li>
+<li> <%# this is how we use link_to %>
 <%= link_to "Most Recent", recent_path, class: 'nav-link active' %>
+</li>
+
+<li>
+<%= link_to "Create new Design", new_design_path, class: 'nav-link active' %>
 </li>
 
       </ul>
 
       <%# this lower part starting from form is for search %>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" action="/designs" method="GET">
+        <input class="form-control me-2" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>

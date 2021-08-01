@@ -1,13 +1,13 @@
 class Design < ApplicationRecord
 
-    
+    validates :title, presence: true
 
     def self.search(query)
-        self.where("title like %?%", query)
+        self.where("title LIKE ?", query)
     end
 
     def self.most_recent 
-        self.order(created: :desc)
+        self.order(created_at: :desc)
     end
 
     def uploaded_at

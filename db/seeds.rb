@@ -6,8 +6,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Design.destroy_all
 count = 0 
-designs = 500
+designs = 50
 
 count = 0
 
