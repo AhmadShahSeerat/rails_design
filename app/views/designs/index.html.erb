@@ -1,6 +1,7 @@
+<h1> All Designs </h1>
 
-<%= index_header %>
-<%= link_to "MAKES NEW DESIGN FOR COLLAGE", new_collage_design_path(@collage) if @collage %>
 <ul>
-    <%= render @images %>
+<% @designs.each do |img| %>
+    <li><%= link_to(img.title, design_path(img)) %> - <%= img.uploaded_at %></li>
+<% end %>
 </ul>

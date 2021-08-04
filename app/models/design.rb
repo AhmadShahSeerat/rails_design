@@ -1,11 +1,15 @@
 class Design < ApplicationRecord
     validates :title, presence: true, uniqueness: {scope: :design_url, message: 'and design Url are not UNIQUE'}
     validates :description, presence: true
-    validates :design_url, presence: true, design_url_format: { on: :create }
+    validates :design_url, presence: true
     belongs_to :collage, optional: true # collage= COLLAGE OBJECT
 
     # accepts_nested_attributes_for :collage
     # collage_attributes=(attributes) 
+
+    def uploaded_at
+        self.created_at.to_date
+    end
 
     def collage_attributes=(attributes)
 
