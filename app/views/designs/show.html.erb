@@ -1,33 +1,13 @@
-
-<%# <img src=" <%= @design.design_url %> 
-
-<%# these two are the same  %>
-<%=  %>
-
-<% if @design.design_url %>  <%# here i wanted to say if there is any problem with my code please do remove this message %>
-        <%= image_tag(@design.design_url) %>
-
-<% else %>
-<p> "This design has no image" </p>
-<% end %>
-
-
-<h1> <%= @design.title %> </h1>
-
-
+<%= render partial: 'errors/errors', locals: {model: @design} %>
+<%= design_tag(@design.design_url) %>
+<h1><%= @design.title %></h1>
 <div>
-
-<p> <%= @design.uploaded_at %> </p>
-<p> <%= @design.description %> </p>
-<p> Views: <%= @design.views %> </p>
-<p> Likes: <%= @design.likes %> </p>
-<p> Dislikes: <%= @design.dislikes %> </p>
-
+    <p> <%= format_created_at(@design) %></p>
+    <p> <%= @design.description %></p>
+    <p> Views: <%= @design.views %></p>
+    <p> Likes: <%= @design.likes %></p>
+    <p> Dislikes: <%= @design.dislikes %></p>
 </div>
 
-
-
-<%= link_to 'Back', designs_path %>
-<%= link_to 'Edit', edit_design_path %>
-
-
+<%= link_to 'back', designs_path %>
+<%= link_to 'Edit', edit_design_path(@design) %>

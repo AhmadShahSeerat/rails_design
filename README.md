@@ -1,24 +1,19 @@
-# README
+# NOTES 
+ 
+ * VALIDATIONS: 
+ Where can we validate?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  MODELS: MOSTLY HERE. 
 
-Things you may want to cover:
+  VIEWS: lets say we want to add it here, in form_with <%= f.lable :description, required: true %>
+  
+  CONTROLLERS: in controller        def create 
+                                     @design = Design.new(design_params)
+                                     if params[:description] == "" 
+                                     render :whatever
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

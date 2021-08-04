@@ -1,20 +1,13 @@
-<h1>EDIT A DESIGN </h1>
+<h1> EDIT A DESIGN </h1>
 
+<%= render partial: 'errors/errors', locals: {model: @design} %>
 <%= form_with(model: @design) do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-
-<%= f.label :design_url %>
-<%= f.text_field :design_url %>
-
-<%= f.label :description %>
-<%= f.text_field :description %>
-
-<%= f.label :created_at %>
-<%= f.text_field :created_at %>
-
-<%= f.submit "Update design" %>
-
+   <%= f.label :title %>
+    <%= f.text_field :title %><br>
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
+    <%= f.label :design_url %>
+    <%= f.text_field :design_url %><br>
+    <%= f.submit 'Update design' %>
 <% end %>
-
-<%= link_to "Delete Design", design_path(@design), method: "delete" %>
+<%= link_to "DELETE design", design_path(@design), method: "delete" %>

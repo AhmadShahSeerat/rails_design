@@ -8,7 +8,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Design.destroy_all
 count = 0 
-designs = 50
+designs = 501
 
 count = 0
 

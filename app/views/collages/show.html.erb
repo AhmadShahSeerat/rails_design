@@ -1,0 +1,14 @@
+<h1><%= @collage.name %></h1>
+<div>
+    <p> <%= @collage.description %></p>
+</div>
+
+<h1>THIS COLLAGES DESIGNS: </h1>
+<%= link_to "Takes us to collage Designs path", collage_designs_path(@collage) %>
+<ul>
+<% @collage.designs.each do |img| %>
+    <li><%= link_to(img.title, design_path(img)) %> - <%= index_date_format(img) %></li>
+<% end %>
+</ul>
+
+<%= link_to 'back', collages_path %>

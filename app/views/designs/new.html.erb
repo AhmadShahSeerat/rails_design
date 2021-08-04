@@ -1,83 +1,14 @@
-<h1>------Creating new Design--------- </h1>
-
-<form action="/designs", method="post"> <%# <%=FAM is the shortcut for the form %> 
-
-<input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
-
-<label for="design[title]">Title:</label>  <%# <%= LF is the shortcut for label %>
-<input name="design[title"> <%# <%= IN is the shortcut for the input %>
-
-<label for="design[design_url">Design URL:</label>
-<input name="design[design_url">
-
-<label for="design[description]">Description:</label>
-<input name="design[description">
-
-<label for="design[created_at]">Created_at:</label>
-<input name='design[created_at'>
-
-<input type="Submit", value="Create new Design"> <%# <%= IT SV is the shortcut for the input of submit %>
-
-</form>
-
-    <h1>----------------form tag---------------</h1>
-
-<%# form_tag, it has the object right after the word form_tag and every label everything has the tag suffix %>
-    <%= form_tag(designs_path) do %>
-    <%= label_tag :title %>
-    <%= text_field_tag :title %>
-
-    <%= label_tag :design_url %>
-    <%= text_field_tag :design_url %>
-
-    <%= label_tag :description %>
-    <%= text_field_tag :description %>
-
-    <%= label_tag :created_at %>
-    <%= text_field_tag :created_at %>
-
-    <%= submit_tag('Create new Design') %>
-      <%end %>
-
-   <h1>----------------form for---------------</h1>
-
-
-   <%= form_for(@design) do |f| %>  <%# with form_for the difference is that it comes with iteration of f and first we say .new and then ... %>
-
-   <%= f.label :title %>
-   <%= f.text_field :title %>
-
-   <%= f.label :design_url %>
-   <%= f.text_field :design_url %>
-
-   <%= f.label :description %>
-   <%= f.text_field :description %>
-
-   <%= f.label :created_at %>
-   <%= f.text_field :created_at %>
-   
-   <%= f.submit "Create new Design" %>
-
-   <% end %>
   
-   <h1>----------------form with---------------</h1>
+<h1> Create New Design </h1>
 
-<%# form_with the only difference is that it takes the the model or url at the beginning when we start our program %>
-
-<%= form_with(model:                                                    @design) do |f| %>
-
-<%= f.label :title %>
-<%= f.text_field :title %>
-
-<%= f.label :design_url %>
-<%= f.text_field :design_url %>
-
-<%= f.label :description %>
-<%= f.text_field :description %>
-
-<%= f.label :created_at %>
-<%= f.text_field :created_at %>
-
-<%= f.submit "Create new Design" %>
-
+<%= render partial: 'errors/errors', locals: {model: @design} %>
+<%= form_with(model: [@collage, @design]) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
+    <%= f.label :design_url %>
+    <%= f.text_field :design_url %><br>
+    <%= fields_for_helper(f) %>
+    <%= f.submit 'Create design' %>
 <% end %>
